@@ -5,10 +5,26 @@
   <link rel="stylesheet" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="./styles/main.css">
 </head>
-<body>
+<body ng-app="LaurensFavAnimals">
 
-<h1>Are these your favorite animals?</h1>
-<button class="btn btn-success">Make a Zoo!</button>
+
+<div ng-controller="FavAnimals">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h1>Are these your favorite animals?</h1>
+    <button class="btn btn-success">Make a Zoo!</button>
+      <div ng-repeat="animal in animals">
+        <div class="col-xs-3">
+          <div class="thumbnail">
+            <img src="{{animal.url}}">
+            <div class="caption">
+              <h3>{{animal.name}}</h3>
+              <p>{{animal.bio}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
 
 
 
